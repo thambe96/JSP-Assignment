@@ -14,7 +14,7 @@
     <h1>Home page</h1>
    <%--
 
-       <a href="views/login.jsp" target="_blank">
+       <a href="views/registeremp.jsp" target="_blank">
             <button>Login</button>
         </a>
 

@@ -23,7 +23,7 @@ public class PageLoaderServlet extends HttpServlet {
 
 
         RequestDispatcher rd = switch (req.getParameter("rolepage")) {
-            case "Employee Login" -> req.getRequestDispatcher("/views/login.jsp");
+            case "Employee Login" -> req.getRequestDispatcher("/views/employeelogin.jsp");
             case "Admin Login" -> req.getRequestDispatcher("/views/adminlogin.jsp");
             default -> req.getRequestDispatcher("/views/error.jsp"); // homepage insted of error
         };
