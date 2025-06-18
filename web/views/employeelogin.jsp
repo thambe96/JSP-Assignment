@@ -177,7 +177,7 @@
                 <p class="subtitle">Please log in to lodge a complaint</p>
             </div>
 
-            <form action="adminLogin" method="get">
+            <form action="empSignUp" method="get">
                 <div class="form-floating">
                     <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                     <label for="username"><i class="fas fa-user me-2"></i>Username</label>
