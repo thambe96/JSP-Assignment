@@ -87,7 +87,9 @@
             <p class="text-muted">Create your account</p>
           </div>
 
-          <form action="register.jsp" method="POST">
+          <form action="../empSignUp" method="post">
+
+
             <!-- Username Field -->
             <div class="form-floating mb-3">
               <input type="text"
@@ -98,6 +100,22 @@
                      required>
               <label for="username">Username</label>
             </div>
+
+
+
+            <!-- Password Field -->
+            <div class="form-floating mb-4">
+              <input type="password"
+                     class="form-control"
+                     id="password"
+                     name="password"
+                     placeholder="Password"
+                     required>
+              <label for="password">Password</label>
+            </div>
+
+
+
 
             <!-- Email Field -->
             <div class="form-floating mb-3">
@@ -110,16 +128,6 @@
               <label for="email">Email Address</label>
             </div>
 
-            <!-- Password Field -->
-            <div class="form-floating mb-4">
-              <input type="password"
-                     class="form-control"
-                     id="password"
-                     name="password"
-                     placeholder="Password"
-                     required>
-              <label for="password">Password</label>
-            </div>
 
 
 
@@ -144,8 +152,9 @@
               </button>
             </div>
 
+
             <div class="d-grid mt-3">
-              <button type="submit" class="btn btn-primary btn-back" onclick="window.history.back()">
+              <button <%--type="submit" --%>class="btn btn-primary btn-back" onclick="window.history.back()">
                 Back
               </button>
             </div>

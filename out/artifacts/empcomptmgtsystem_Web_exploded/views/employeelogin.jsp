@@ -190,7 +190,7 @@
 
                 <div class="d-grid gap-2">
                     <input type="submit" class="btn btn-login" value="Login">
-                    <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/views/registeremp.jsp" target="_self"><button type="button" class="btn btn-cancel">Register</button></a>
+                    <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/views/employeeregister.jsp" target="_self"><button type="button" class="btn btn-cancel">Register</button></a>
                 </div>
             </form>
         </div>
