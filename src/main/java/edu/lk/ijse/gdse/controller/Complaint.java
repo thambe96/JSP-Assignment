@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet("/complaint")
 public class Complaint extends HttpServlet {
@@ -48,7 +49,19 @@ public class Complaint extends HttpServlet {
 
             if (flag) {
                 String nextComplaintId = complaintDAO.getNextComplaintId(getServletContext());
+
+                ComplaintDAO complaintDAO2 = new ComplaintDAO();
+
+                List<ComplaintModel> complaintList = complaintDAO2.getAllComplaintByEmpUsrName(username,getServletContext());
+
+
+
                 req.setAttribute("nextComplaintId", nextComplaintId);
+                req.setAttribute("complaintList", complaintList);
+
+
+
+
 //                req.setAttribute("username", username);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/views/complaint.jsp");
                 dispatcher.forward(req, resp);

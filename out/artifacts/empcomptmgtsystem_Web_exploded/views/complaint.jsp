@@ -11,6 +11,7 @@
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="edu.lk.ijse.gdse.model.ComplaintModel" %>
 
 
 <%
@@ -331,6 +332,7 @@
         </h3>
 
         <form action="${pageContext.request.contextPath}/complaint" method="post" id="complaintForm">
+
           <input type="hidden" name="action" value="lodge" id="formAction">
 
           <div class="form-floating mb-3">
@@ -368,17 +370,58 @@
           </div>
 
           <div class="btn-group-custom">
+
+
             <button type="submit" class="btn btn-lodge flex-fill" >
               <i class="fas fa-paper-plane me-2"></i>Lodge
             </button>
+
+
+          </div>
+
+        </form>
+
+
+
+
+<%--
+
+        <form action="">
+
+          <div class="btn-group-custom">
+
             <button type="submit" class="btn btn-update flex-fill")>
               <i class="fas fa-edit me-2"></i>Update
             </button>
+
+          </div>
+
+        </form>
+
+
+       --%>
+
+
+
+<%--
+
+        <form action="">
+
+          <div class="btn-group-custom">
             <button type="submit" class="btn btn-delete flex-fill")>
               <i class="fas fa-trash me-2"></i>Delete
             </button>
           </div>
+
+
         </form>
+
+
+      --%>
+
+
+
+
       </div>
     </div>
 
@@ -398,10 +441,104 @@
               <th><i class="fas fa-comment me-2"></i>Complaint</th>
               <th><i class="fas fa-info-circle me-2"></i>Status</th>
               <th><i class="fas fa-calendar me-2"></i>Date</th>
-              <th><i class="fas fa-cog me-2"></i>Actions</th>
+              <th><i class="fa-solid fa-asterisk me-2"></i>Remark</th>
+              <th><i class="fas fa-cog me-2"></i>Update</th>
+              <th><i class="fas fa-cog me-2"></i>Delete</th>
             </tr>
             </thead>
             <tbody>
+
+
+            <%
+
+              List<ComplaintModel> complaintList = (List<ComplaintModel>) request.getAttribute("complaintList");
+
+              for (ComplaintModel comp : complaintList) {
+
+            %>
+
+            <tr>
+
+              <td><%= comp.getComplanitId() %></td>
+
+              <td><%= comp.getComplaint() %></td>
+
+              <td><%= comp.getStatus() %></td>
+
+              <td><%= comp.getComplaintDate() %></td>
+
+              <td><%= comp.getRemark() %></td>
+
+
+              <td>
+
+                <!-- Form for each row -->
+
+                <form action="${pageContext.request.contextPath}/compUpdate" method="post">
+
+                  <input type="hidden" name="compId" value="<%= comp.getComplanitId() %>">
+
+                  <input type="hidden" name="complaint" value="<%= comp.getComplaint() %>">
+
+                  <input type="hidden" name="compDate" value="<%= comp.getComplaintDate() %>">
+
+                  <%System.out.println("Inside complaint.jsp line 485 :: " + comp.getStatus());%>
+
+
+                  <input type="hidden" name="status" value="<%= comp.getStatus() %>">
+
+                  <% //  error fixed here "stats" replaced by "status" %>
+
+                  <input type="hidden" name="remark" value="<%= comp.getRemark() %>">
+
+                  <input type="hidden" name="username" value="<%= comp.getUsrname() %>">
+
+                  <button type="submit">Update</button>
+
+                </form>
+
+              </td>
+
+
+
+              <td>
+
+                <!-- Form for each row -->
+
+                <form action="${pageContext.request.contextPath}/compDelete" method="post">
+
+                  <input type="hidden" name="compId" value="<%= comp.getComplanitId() %>">
+
+                  <input type="hidden" name="complaint" value="<%= comp.getComplaint() %>">
+
+                  <input type="hidden" name="compDate" value="<%= comp.getComplaintDate() %>">
+
+                  <input type="hidden" name="status" value="<%= comp.getStatus() %>">
+
+                  <input type="hidden" name="remark" value="<%= comp.getRemark() %>">
+
+                  <input type="hidden" name="username" value="<%= comp.getUsrname() %>">
+
+                  <button type="submit">Delete</button>
+
+                </form>
+
+              </td>
+
+
+
+            </tr>
+
+            <% } %>
+
+
+            <%
+
+              session.removeAttribute("complaintList");
+
+            %>
+
+
 
             </tbody>
           </table>

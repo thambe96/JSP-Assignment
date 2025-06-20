@@ -2,6 +2,7 @@ package edu.lk.ijse.gdse.controller;
 
 import edu.lk.ijse.gdse.dao.ComplaintDAO;
 import edu.lk.ijse.gdse.dao.EmployeeDAO;
+import edu.lk.ijse.gdse.model.ComplaintModel;
 import edu.lk.ijse.gdse.model.EmployeeModel;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
@@ -15,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 
 @WebServlet("/empSignUp")
@@ -65,10 +67,21 @@ public class EmployeeSignUp extends HttpServlet {
             ComplaintDAO complaintDAO = new ComplaintDAO();
             String nextComplaintId = complaintDAO.getNextComplaintId(getServletContext());
             req.setAttribute("nextComplaintId", nextComplaintId);
+
+           ComplaintDAO complaintDAO2 = new ComplaintDAO();
+
+           List<ComplaintModel> complaintList = complaintDAO2.getAllComplaintByEmpUsrName(username,getServletContext());
+
+
+
+
 //            req.setAttribute("username", username);
 
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
+            req.setAttribute("complaintList", complaintList);
+
+//            session.setAttribute("complaintList", complaintList);
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("/views/complaint.jsp");
             dispatcher.forward(req, resp);
