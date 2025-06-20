@@ -7,41 +7,6 @@
 --%>
 
 
-<%--
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>empcompmgtsystem</title>
-</head>
-<body>
-    <h1>Home page</h1>
-   &lt;%&ndash;
-
-       <a href="views/employeeregister.jsp" target="_blank">
-            <button>Login</button>
-        </a>
-
-    &ndash;%&gt;
-
-    <form action="loadPage" method="get">
-        <input type="submit" name="rolepage" value="Employee Login" />
-    </form>
-
-    <form action="loadPage" method="get">
-        <input type="submit" name="rolepage" value="Admin Login">
-    </form>
-
-
-
-
-</body>
-</html>
-
-
---%>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">

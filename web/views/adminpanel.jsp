@@ -59,7 +59,7 @@
         .header-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: #6c757d/*linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)*/;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -69,7 +69,7 @@
         }
 
         .btn-logout {
-            background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+            background: #6c757d/*linear-gradient(135deg, #ef4444 0%, #f87171 100%)*/;
             border: none;
             color: white;
             padding: 10px 24px;
@@ -181,7 +181,7 @@
         }
 
         .btn-update {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: #0b5ed7;
             color: white;
         }
 
@@ -191,17 +191,17 @@
         }
 
         .btn-delete {
-            background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+            background: #dc3545/*linear-gradient(135deg, #ef4444 0%, #f87171 100%)*/;
             color: white;
         }
 
         .btn-delete:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 4px 12px rgba(200, 92, 92, 0.3);
         }
 
         .btn-status {
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            background: #146c43/*linear-gradient(135deg, #10b981 0%, #34d399 100%)*/;
             color: white;
         }
 
@@ -227,7 +227,7 @@
         .radio-item input[type="radio"] {
             width: 16px;
             height: 16px;
-            accent-color: #6366f1;
+            accent-color: #6c757d/*#6366f1*/;
         }
 
         .radio-item label {

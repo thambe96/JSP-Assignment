@@ -16,7 +16,7 @@
 
 
       .btn-register {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #86b7fe/*linear-gradient(135deg, #667eea 0%, #764ba2 100%)*/;
         border: none;
         border-radius: 12px;
         padding: 0.875rem 2rem;

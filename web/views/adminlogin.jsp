@@ -59,7 +59,7 @@
         .icon-container {
             width: 64px;
             height: 64px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: #6c757d/*linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)*/;
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -106,7 +106,7 @@
         }
 
         .form-control:focus {
-            border-color: #6366f1;
+            border-color: #6c757d/*#6366f1*/;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
@@ -126,7 +126,7 @@
         }
 
         .form-control:focus + .input-icon {
-            color: #6366f1;
+            color: #6c757d/*#6366f1*/;
         }
 
         .btn-group {
@@ -139,7 +139,7 @@
         .btn-login {
             width: 100%;
             height: 48px;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: #6c757d/*linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)*/;
             border: none;
             border-radius: 12px;
             color: white;
