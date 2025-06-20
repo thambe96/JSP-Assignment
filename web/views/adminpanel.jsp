@@ -194,7 +194,7 @@
 
                                 <!-- Form for each row -->
 
-                                <form action="${pageContext.request.contextPath}/srvName" method="post">
+                                <form action="${pageContext.request.contextPath}/adminCompDelete" method="post">
 
                                     <input type="hidden" name="compId" value="<%= comp.getComplanitId() %>">
 
