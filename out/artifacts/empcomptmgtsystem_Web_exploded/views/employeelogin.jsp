@@ -234,15 +234,22 @@
                 <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/views/employeeregister.jsp" class="btn btn-register">
                     <i class="fas fa-user-plus me-2"></i>Register
                 </a>
-                <button type="button" class="btn btn-cancel" onclick="goBack()">
-                    <i class="fas fa-arrow-left me-2"></i>Cancel
-                </button>
+
+                <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/">
+                    <button type="button" class="btn btn-cancel">
+                        <i class="fas fa-arrow-left me-2"></i>Cancel
+                    </button>
+                </a>
+
             </div>
         </div>
     </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+<%--
+
 <script>
     function goBack() {
         if (confirm('Are you sure you want to cancel?')) {
@@ -250,5 +257,8 @@
         }
     }
 </script>
+
+--%>
+
 </body>
 </html>

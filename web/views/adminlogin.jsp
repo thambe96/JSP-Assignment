@@ -246,7 +246,11 @@
 
             <div class="btn-group">
                 <input type="submit" class="btn-login" value="Sign In">
-                <button type="button" class="btn-cancel" onclick="window.history.back()">Cancel</button>
+
+                <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                </a>
+
             </div>
         </form>
     </div>

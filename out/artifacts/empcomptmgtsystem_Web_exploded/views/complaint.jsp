@@ -268,10 +268,19 @@
         </h1>
         <p class="page-subtitle">Submit, track, and manage your complaints efficiently</p>
       </div>
-      <button type="button" class="logout-btn" onclick="logout()">
-        <i class="fas fa-sign-out-alt me-1"></i>
-        Logout
-      </button>
+
+
+      <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/loadPage?rolepage=Employee+Login">
+        <button type="submit" class="logout-btn">
+          <i class="fas fa-sign-out-alt me-1"></i>
+          Logout
+        </button>
+
+      </a>
+
+
+
+
     </div>
   </div>
 </div>
@@ -421,6 +430,9 @@
 <!-- Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
+
+<%--
+
 <script>
   function logout() {
     if (confirm('Are you sure you want to logout?')) {
@@ -429,6 +441,9 @@
     }
   }
 </script>
+
+--%>
+
 
 </body>
 </html>

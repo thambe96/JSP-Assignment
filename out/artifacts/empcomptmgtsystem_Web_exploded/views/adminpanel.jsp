@@ -318,10 +318,14 @@
                 </div>
                 Admin Panel
             </h1>
-            <button type="button" class="btn-logout">
-                <i class="fas fa-sign-out-alt"></i>
-                Logout
-            </button>
+
+            <a href="http://localhost:8080/empcomptmgtsystem_Web_exploded/loadPage?rolepage=Admin+Login">
+                <button type="button" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </a>
+
         </div>
     </div>
 
