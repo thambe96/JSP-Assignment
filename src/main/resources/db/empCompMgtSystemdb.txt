@@ -1,0 +1,37 @@
+create database empCompMgtSystem;
+
+use empCompMgtSystem;
+
+create table admin(
+	
+	username varchar(50) primary key,
+	password varchar(50) not null
+
+
+);
+
+
+insert into admin values("admin1", "pass1234");
+insert into admin values("admin2", "pass5678");
+
+
+create table employee(
+	
+	username varchar(50) primary key,
+	password varchar(50) not null,
+	email varchar(50) not null
+
+
+);
+
+
+CREATE TABLE complaint (
+    complaint_id VARCHAR(50) PRIMARY KEY,
+    complaint VARCHAR(300) NOT NULL,
+    date DATE,
+    status VARCHAR(50),
+    remark VARCHAR(50),  -- Corrected closing parenthesis
+    username VARCHAR(50),
+    
+    FOREIGN KEY (username) REFERENCES employee(username) ON UPDATE CASCADE ON DELETE CASCADE
+);
