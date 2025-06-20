@@ -216,6 +216,45 @@ public class ComplaintDAO {
 
 
 
+    public List<ComplaintModel> getAllComplaints(ServletContext context) {
+
+        DataSource ds = new DataSource();
+        BasicDataSource bds = (BasicDataSource) context.getAttribute("ds");
+        List<ComplaintModel> allComplaints = new ArrayList<>();
+
+        try {
+            Connection connection = bds.getConnection();
+            PreparedStatement ps = connection.prepareStatement("select * from complaint");
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                String complaintId = rs.getString(1);
+                String complaint = rs.getString(2);
+                String date = rs.getString(3);
+                String status = rs.getString(4);
+                String remark = rs.getString(5);
+                String usrname = rs.getString(6);
+
+
+                ComplaintModel complaintModel = new ComplaintModel(complaintId, complaint, date, status, remark, usrname);
+                allComplaints.add(complaintModel);
+
+            }
+
+            connection.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return allComplaints;
+
+
+    }
+
+
 
 
 

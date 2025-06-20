@@ -1,6 +1,9 @@
 package edu.lk.ijse.gdse.controller;
 
 import edu.lk.ijse.gdse.dao.AdminDAO;
+import edu.lk.ijse.gdse.dao.ComplaintDAO;
+import edu.lk.ijse.gdse.model.ComplaintModel;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,6 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/adminLogin")
 public class AdminLogin extends HttpServlet {
@@ -30,7 +34,24 @@ public class AdminLogin extends HttpServlet {
 //            req.getSession().setAttribute("user", username);
 //            req.getSession().setAttribute("admin", username);
 
-            resp.sendRedirect("views/adminpanel.jsp");
+
+            ComplaintDAO complaintDAO = new ComplaintDAO();
+
+            List<ComplaintModel> complaintModelList = complaintDAO.getAllComplaints(getServletContext());
+
+            System.out.println(complaintModelList);
+
+
+            req.setAttribute("complaintModelList", complaintModelList);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/views/adminpanel.jsp");
+            dispatcher.forward(req, resp);
+
+
+
+
+
+
+//            resp.sendRedirect("views/adminpanel.jsp");
 
         }
 

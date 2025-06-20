@@ -30,10 +30,11 @@ public class AdminDAO {
             ps.setString(1, username);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
-            connection.close();
+
 
             if (rs.next()) {
                 flag = true;
+                connection.close();
             }
 
         } catch (SQLException e) {
